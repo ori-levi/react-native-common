@@ -3,12 +3,13 @@ import {View, Text, TextInput} from 'react-native';
 
 const TextField = (props) => {
     const { label, value, onChangeText, autoCorrect, placeholder,
-        secureTextEntry } = props;
+        secureTextEntry, keyboardType } = props;
 
     return (
         <View style={styles.containerStyle}>
             <Text style={styles.labelStyle}>{label}</Text>
             <TextInput
+                keyboardType={keyboardType || 'default'}
                 autoCorrect={autoCorrect}
                 placeholder={placeholder}
                 style={styles.inputStyle}
